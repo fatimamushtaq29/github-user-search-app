@@ -1,0 +1,62 @@
+@use '../abstracts' as *;
+
+.user-head {
+    height: clamp(4.375rem, 1.572rem + 11.959vw, 7.3125rem);
+    display: flex;
+    align-items: center;
+    gap: clamp(1.188rem, -0.124rem + 5.598vw, 2.563rem);
+    @include mediaQuery(four-k) {
+        height: 3.875rem;
+        align-items: flex-start;
+    }
+    img {
+        height: 100%;
+        border-radius: 50%;
+        @include mediaQuery(four-k) {
+            position: absolute;
+            height: 7.313rem;
+            left: 3rem;
+            top: 3rem;
+        }
+    }
+    .user-basics {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        @include mediaQuery(four-k) {
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: space-between;
+        }
+        .name {
+            font-size: clamp(1rem, 0.404rem + 2.545vw, 1.625rem);
+            font-weight: $bold;
+            color: var(--profile-name-and-stat-figure-text);
+            opacity: var(--opacity);
+            transition: color 1s;
+            @include mediaQuery(four-k) {
+                line-height: normal;
+            }
+        }
+        .username {
+            @include mediaQuery(four-k) {
+                line-height: normal;
+            }
+            a {
+                font-size: clamp(0.813rem, 0.635rem + 0.7613vw, 1rem);
+                color: var(--blue);
+                text-decoration: none;
+            }
+        }
+        .join-date {
+            font-size: clamp(0.813rem, 0.694rem + 0.509vw, 0.938rem);
+            color: var(--form-outline-and-joindate-text);
+            transition: color 1s;
+        }
+        @include mediaQuery(four-k) {
+            line-height: 2.406rem;
+        }
+    }
+}

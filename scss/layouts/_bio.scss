@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.bio {
+    padding-block: clamp(1.5rem, 2.6002rem + -2.2921vw, 2.063rem) 
+                   clamp(1.438rem, 0.902rem + 2.288vw, 2rem);
+    font-size: clamp(0.813rem, 0.694rem + 0.509vw, 0.938rem);
+    line-height: 1.563rem;
+    color: var(--text);
+    opacity: var(--opacity);
+    transition: color 1s;
+    @include mediaQuery(laptop) {
+        padding-top: clamp(1.25rem, 2.25rem + -1.563vw, 1.5rem);
+    }
+}

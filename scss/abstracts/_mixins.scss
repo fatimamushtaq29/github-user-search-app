@@ -1,0 +1,23 @@
+@use 'breakpoints' as *;
+@use 'sass:map';
+
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+};
+
+@mixin mediaQuery($size-name) {
+    @if map-has-key($breakpoints, $size-name) {
+        $size: map-get($breakpoints, $size-name);
+        @media (min-width: $size) {
+            @content
+        };
+    } @else {
+        $size: $size-name;
+        @media (min-width: $size) {
+            @content
+        };
+    } 
+}

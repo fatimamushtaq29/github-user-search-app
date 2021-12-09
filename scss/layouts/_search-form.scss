@@ -1,0 +1,73 @@
+@use '../abstracts' as *;
+
+form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-block: 2.25rem clamp(1rem, 0.523rem + 2.036vw, 1.5rem);
+    label {
+        height: clamp(1.25rem, 1.012rem + 1.018vw, 1.5rem);
+        position: absolute;
+        left: clamp(1rem, 0.046rem + 4.071vw, 2rem);
+        cursor: pointer;
+        .search-icon {
+            width: clamp(1.253rem, 1.014rem + 1.022vw, 1.504rem);
+            height: clamp(1.25rem, 1.012rem + 1.018vw, 1.5rem);
+        }   
+    }
+    input, button {
+        border-style: none;
+    }
+    input {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+        padding-block: clamp(1.094rem, 0.826rem + 1.144vw, 1.375rem);
+        padding-left: clamp(2.813rem, 0.726rem + 8.904vw, 5rem);
+        padding-right: clamp(6.125rem, 3.620rem + 10.687vw, 8.75rem);
+        font-family: 'Space Mono', sans-serif;
+        font-size: clamp(0.75rem, 0.392rem + 1.527vw, 1.125rem);
+        line-height: 1.563rem;
+        color: var(--header-and-searchform-input-text);
+        border-radius: 0.938rem;
+        background-color: var(--background-color-secondary);
+        transition: background-color 1s, color 1s, box-shadow 1s;
+        box-shadow: 0rem 1rem 1.875rem -0.625rem var(--box-shadow);
+        cursor: pointer;
+        &:focus {
+            outline-color: var(--form-outline-and-joindate-text);
+        }
+    }
+    ::placeholder {
+        font-family: 'Space Mono', sans-serif;
+        font-size: clamp(0.75rem, 0.392rem + 1.527vw, 1.125rem);
+        color: var(--text);
+        transition: color 1s;
+    }
+    // no-result element 
+    p {
+        color: var(--no-result-red);
+        position: absolute;
+        font-size: clamp(0.677rem, 0.4280rem + 1.0626vw, 0.938rem);
+        right: clamp(6.125rem, 3.620rem + 10.687vw, 8.75rem);
+        display: var(--no-result-display);
+    }
+    button {
+        position: absolute;
+        right: clamp(0.438rem, 0.2596rem + 0.7613vw, 0.625rem);
+        background-color: var(--blue);
+        transition: background-color 250ms;
+        color: white;
+        font-family: 'Space Mono', sans-serif;
+        font-size: clamp(0.875rem, 0.756rem + 0.509vw, 1rem);
+        font-weight: $bold;
+        line-height: normal;
+        padding: 0.781rem clamp(1rem, 0.553rem + 1.909vw, 1.469rem);
+        border-radius: 0.625rem;
+        &:hover {
+            background-color: var(--hover-blue);
+            cursor: pointer;
+        }
+    }
+}

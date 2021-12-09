@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+main {
+    position: relative;
+    padding: clamp(2rem, 1.523rem + 2.036vw, 2.5rem) 
+            clamp(1.5rem, 0.546rem + 4.071vw, 2.5rem) 
+            clamp(2.5rem, 3.477rem + -2.036vw, 3rem);
+    background-color: var(--background-color-secondary);
+    transition: background-color 1s, box-shadow 1s;
+    border-radius: 0.938rem;
+    box-shadow: 0rem 1rem 1.875rem -0.625rem var(--box-shadow);
+    @include mediaQuery(four-k) {
+        padding: 3rem;
+        padding-left: 12.625rem;
+    }
+}

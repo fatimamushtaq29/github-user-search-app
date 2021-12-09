@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+.information {
+    margin-top: clamp(1.5rem, 1.142rem + 1.527vw, 1.875rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    @include mediaQuery(laptop) {
+        flex-wrap: wrap;
+        height: 3.813rem;
+        margin-top: clamp(1.875rem, 1.374rem + 1.043vw, 2.313rem);
+    }
+    div {
+        position: relative;
+        @include mediaQuery(laptop) {
+            inline-size: 55%;
+        }
+        svg {
+            position: absolute;
+            fill: var(--text);
+            opacity: var(--opacity);
+            transition: fill 1s;
+        }
+        p {
+            font-size: clamp(0.813rem, 0.6937rem + 0.5089vw, 0.938rem);
+            line-height: normal;
+            color: var(--text);
+            opacity: var(--opacity);
+            transition: color 1s;
+            padding-left: 2.063rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+}

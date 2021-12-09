@@ -1,0 +1,24 @@
+@use '../abstracts' as *;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Mono', sans-serif;
+    background-color: var(--background-color-primary);
+    transition: background-color 1s;
+}
+
+.container {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: clamp(1.938rem, -4.562rem + 27.733vw, 8.75rem) 
+            clamp(1.5rem, -2.913rem + 18.83vw, 6.125rem) 
+            clamp(4.938rem, -4.425rem + 39.947vw, 14.75rem);
+    @include mediaQuery(laptop) {
+        padding: clamp(8.75rem, 8.4643rem + 0.5952vw, 9rem) 
+                clamp(6.125rem, -12.2327rem + 38.2452vw, 22.188rem) 
+                clamp(9.063rem, 21.2494rem + -13.5405vw, 14.75rem);
+    }
+}

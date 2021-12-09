@@ -1,0 +1,27 @@
+:root {    
+    --background-color-primary: #F6F8FF;
+    --background-color-secondary: #FEFEFE;
+    --blue: #0079FF;
+    --hover-blue: #60ABFF;
+    --header-and-searchform-input-text: #222731;
+    --profile-name-and-stat-figure-text: #2B3442;
+    --box-shadow: #4660BB31;
+    --text: #4B6A9B;
+    --form-outline-and-joindate-text: #697C9A;
+    --no-result-red: #F74646;
+    --opacity: 1;
+}
+
+[data-theme='dark'] {
+    --background-color-primary: #141D2F;
+    --background-color-secondary: #1E2A47;
+    --header-and-searchform-input-text: white;
+    --profile-name-and-stat-figure-text: white;
+    --box-shadow: #141D2F;
+    --text: white;
+    --form-outline-and-joindate-text: white;
+}
+
+.not-available {
+    --opacity: 0.5;
+}

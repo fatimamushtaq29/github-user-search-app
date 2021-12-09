@@ -1,0 +1,18 @@
+:root {
+    --sun-icon-display: none;
+    --moon-icon-display: inline;
+    --no-result-display: none;
+}
+
+[data-theme='dark'] {
+    --sun-icon-display: inline;
+    --moon-icon-display: none;
+}
+
+.no-result {
+    --no-result-display: inline;
+}
+
+.input-padding-for-no-result {
+    padding-right: clamp(10.719rem, 5.918rem + 20.482vw, 15.75rem);
+}
