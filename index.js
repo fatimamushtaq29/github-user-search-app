@@ -1,6 +1,7 @@
 const form = document.querySelector('form');
 const noResult = document.querySelector('form p');
 const input = document.querySelector('input');
+const mainSection = document.querySelector('section');
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -19,7 +20,7 @@ const getUserInfo = async () => {
         const config = {headers: {Accept: 'application/vnd.github.v3+json'}};
         const res = await axios.get(`https://api.github.com/users/${searchTerm}`, config);
         const data = res.data;
-
+        mainSection.classList.add('show-main-section');
         const userImage = document.querySelector('.user-image');
         userImage.src = data.avatar_url;
         
@@ -46,12 +47,13 @@ const getUserInfo = async () => {
                 addNotAvailableClass();     
                 if (selector === '.name' || selector === '.bio') {
                     addInnerText(`${selector.charAt(1).toUpperCase() + selector.slice(2)} Not Available`);
+                    return;
                 } 
-                else addInnerText('Not Available');
-            } else {
-                removeNotAvailableClass();
-                addInnerText(value);
-            }
+                addInnerText('Not Available');
+                return;
+            }  
+            removeNotAvailableClass();
+            addInnerText(value);
         }
         update('.name', data.name);
         update('.username a', `@${data.login}`)
@@ -69,7 +71,9 @@ const getUserInfo = async () => {
             blog.onclick = function becomeClickable() {
                 if (!/^https?:\/\//i.test(data.blog)) {
                     window.location.href = `https://${data.blog}`;
-                } else window.location.href = data.blog;
+                    return;
+                } 
+                window.location.href = data.blog;
             }
         }
         update('.twitter p', data.twitter_username);
@@ -79,6 +83,7 @@ const getUserInfo = async () => {
     catch (e) {
         noResult.classList.add('no-result');
         input.classList.add('input-padding-for-no-result');
+        mainSection.classList.remove('show-main-section');
         console.log('No matching result', e);
     }
 }

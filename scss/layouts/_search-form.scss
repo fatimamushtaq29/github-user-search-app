@@ -19,8 +19,8 @@ form {
         border-style: none;
     }
     input {
-        overflow: hidden;
-        white-space: nowrap;
+        // overflow: hidden;
+        // white-space: nowrap;
         text-overflow: ellipsis;
         width: 100%;
         padding-block: clamp(1.094rem, 0.826rem + 1.144vw, 1.375rem);

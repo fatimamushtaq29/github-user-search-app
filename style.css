@@ -53,27 +53,52 @@ table {
 }
 
 :root {
-  --background-color-primary: #F6F8FF;
-  --background-color-secondary: #FEFEFE;
-  --blue: #0079FF;
-  --hover-blue: #60ABFF;
-  --header-and-searchform-input-text: #222731;
-  --profile-name-and-stat-figure-text: #2B3442;
-  --box-shadow: #4660BB31;
-  --text: #4B6A9B;
-  --form-outline-and-joindate-text: #697C9A;
-  --no-result-red: #F74646;
+  --blue: #0079ff;
+  --hover-blue: #60abff;
+  --no-result-red: #f74646;
   --opacity: 1;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color-primary: #f6f8ff;
+    --background-color-secondary: #fefefe;
+    --header-and-searchform-input-text: #222731;
+    --profile-name-and-stat-figure-text: #2b3442;
+    --box-shadow: #4660bb31;
+    --text: #4b6a9b;
+    --form-outline-and-joindate-text: #697c9a;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color-primary: #141d2f;
+    --background-color-secondary: #1e2a47;
+    --header-and-searchform-input-text: white;
+    --profile-name-and-stat-figure-text: white;
+    --box-shadow: #141d2f;
+    --text: white;
+    --form-outline-and-joindate-text: white;
+  }
+}
 [data-theme=dark] {
-  --background-color-primary: #141D2F;
-  --background-color-secondary: #1E2A47;
+  --background-color-primary: #141d2f;
+  --background-color-secondary: #1e2a47;
   --header-and-searchform-input-text: white;
   --profile-name-and-stat-figure-text: white;
-  --box-shadow: #141D2F;
+  --box-shadow: #141d2f;
   --text: white;
   --form-outline-and-joindate-text: white;
+}
+
+[data-theme=light] {
+  --background-color-primary: #f6f8ff;
+  --background-color-secondary: #fefefe;
+  --header-and-searchform-input-text: #222731;
+  --profile-name-and-stat-figure-text: #2b3442;
+  --box-shadow: #4660bb31;
+  --text: #4b6a9b;
+  --form-outline-and-joindate-text: #697c9a;
 }
 
 .not-available {
@@ -81,14 +106,42 @@ table {
 }
 
 :root {
-  --sun-icon-display: none;
-  --moon-icon-display: inline;
   --no-result-display: none;
+  --main-section-display: none;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --sun-icon-display: none;
+    --moon-icon-display: inline;
+    --dark-word-display: inline;
+    --light-word-display: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sun-icon-display: inline;
+    --moon-icon-display: none;
+    --dark-word-display: none;
+    --light-word-display: inline;
+  }
+}
 [data-theme=dark] {
   --sun-icon-display: inline;
   --moon-icon-display: none;
+  --dark-word-display: none;
+  --light-word-display: inline;
+}
+
+[data-theme=light] {
+  --sun-icon-display: none;
+  --moon-icon-display: inline;
+  --dark-word-display: inline;
+  --light-word-display: none;
+}
+
+.show-main-section {
+  --main-section-display: block;
 }
 
 .no-result {
@@ -122,9 +175,7 @@ body {
 
 header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 }
 header .logo {
   font-size: 1.625rem;
@@ -139,13 +190,19 @@ header .theme {
   gap: 1rem;
   cursor: pointer;
 }
-header .theme-name {
+header .change-theme-to-dark, header .change-theme-to-light {
   font-size: 0.813rem;
   font-weight: 700;
   line-height: normal;
   letter-spacing: 0.156rem;
-  text-transform: uppercase;
   color: var(--text);
+  display: var(--dark-word-display);
+  transition: color 1s, display 1s;
+}
+header .change-theme-to-light {
+  color: var(--text);
+  display: var(--light-word-display);
+  transition: color 1s, display 1s;
 }
 header .sun {
   display: var(--sun-icon-display);
@@ -176,8 +233,6 @@ form input, form button {
   border-style: none;
 }
 form input {
-  overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
   width: 100%;
   padding-block: clamp(1.094rem, 0.826rem + 1.144vw, 1.375rem);
@@ -227,7 +282,8 @@ form button:hover {
   cursor: pointer;
 }
 
-main {
+section {
+  display: var(--main-section-display);
   position: relative;
   padding: clamp(2rem, 1.523rem + 2.036vw, 2.5rem) clamp(1.5rem, 0.546rem + 4.071vw, 2.5rem) clamp(2.5rem, 3.477rem - 2.036vw, 3rem);
   background-color: var(--background-color-secondary);
@@ -236,7 +292,7 @@ main {
   box-shadow: 0rem 1rem 1.875rem -0.625rem var(--box-shadow);
 }
 @media (min-width: 90rem) {
-  main {
+  section {
     padding: 3rem;
     padding-left: 12.625rem;
   }
@@ -245,13 +301,11 @@ main {
 .user-head {
   height: clamp(4.375rem, 1.572rem + 11.959vw, 7.3125rem);
   display: flex;
-  align-items: center;
   gap: clamp(1.188rem, -0.124rem + 5.598vw, 2.563rem);
 }
 @media (min-width: 90rem) {
   .user-head {
     height: 3.875rem;
-    align-items: flex-start;
   }
 }
 .user-head img {

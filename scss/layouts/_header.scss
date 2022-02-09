@@ -2,9 +2,7 @@
 
 header {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     .logo {
         font-size: 1.625rem;
         font-weight: $bold;
@@ -18,13 +16,20 @@ header {
         gap: 1rem;
         cursor: pointer;
     }
-    .theme-name {
+    .change-theme-to-dark {
         font-size: 0.813rem;
         font-weight: $bold;
         line-height: normal;
         letter-spacing: 0.156rem;
-        text-transform: uppercase;
         color: var(--text);
+        display: var(--dark-word-display);
+        transition: color 1s, display 1s;
+    }
+    .change-theme-to-light {
+        @extend .change-theme-to-dark;
+        color: var(--text);
+        display: var(--light-word-display);
+        transition: color 1s, display 1s;
     }
     .sun {
         display: var(--sun-icon-display);

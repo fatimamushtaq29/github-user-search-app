@@ -1,6 +1,7 @@
 @use '../abstracts' as *;
 
-main {
+section {
+    display: var(--main-section-display);
     position: relative;
     padding: clamp(2rem, 1.523rem + 2.036vw, 2.5rem) 
             clamp(1.5rem, 0.546rem + 4.071vw, 2.5rem) 

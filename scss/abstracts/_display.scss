@@ -1,12 +1,44 @@
 :root {
-    --sun-icon-display: none;
-    --moon-icon-display: inline;
     --no-result-display: none;
+    --main-section-display: none;
 }
 
-[data-theme='dark'] {
+@media (prefers-color-scheme: light) {
+    :root {
+        --sun-icon-display: none;
+        --moon-icon-display: inline;
+        --dark-word-display: inline;
+        --light-word-display: none;
+    }
+    
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --sun-icon-display: inline;
+        --moon-icon-display: none;
+        --dark-word-display: none;
+        --light-word-display: inline;
+    }
+    
+}
+
+[data-theme="dark"] {
     --sun-icon-display: inline;
     --moon-icon-display: none;
+    --dark-word-display: none;
+    --light-word-display: inline;
+}
+
+[data-theme="light"] {
+    --sun-icon-display: none;
+    --moon-icon-display: inline;
+    --dark-word-display: inline;
+    --light-word-display: none;
+}
+
+.show-main-section {
+    --main-section-display: block;
 }
 
 .no-result {
