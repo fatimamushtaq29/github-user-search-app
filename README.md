@@ -42,7 +42,7 @@ Desktop View (Active):
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: (https://fatimamushtaq29.github.io/github-user-search-app/)
 
 ## My process
 
