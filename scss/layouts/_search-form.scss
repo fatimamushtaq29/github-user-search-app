@@ -41,7 +41,6 @@ form {
     }
     ::placeholder {
         font-family: 'Space Mono', sans-serif;
-        font-size: clamp(0.75rem, 0.392rem + 1.527vw, 1.125rem);
         color: var(--text);
         transition: color 1s;
     }
