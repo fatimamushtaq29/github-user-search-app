@@ -41,8 +41,8 @@ Desktop View (Active):
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: (https://www.frontendmentor.io/solutions/github-user-search-app-using-the-github-users-api-lPvJGAJb3)
+- Live Site URL: (https://fatimamushtaq29.github.io/github-user-search-app/)
 
 ## My process
 
