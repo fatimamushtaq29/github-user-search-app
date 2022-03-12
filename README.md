@@ -53,6 +53,7 @@ Desktop View (Active):
 - Flexbox
 - SCSS/SASS
 - Mobile-first workflow
+- Vanilla Javascript
 
 ### What I learned
 
