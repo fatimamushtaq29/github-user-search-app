@@ -6,7 +6,7 @@
     // align-items: center;
     gap: clamp(1.188rem, -0.124rem + 5.598vw, 2.563rem);
     @include mediaQuery(four-k) {
-        height: 3.875rem;
+        height: 3.95rem;
         // align-items: flex-start;
     }
     img {

@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "![Design preview for the GitHub user search app coding challenge](./preview.jpg)",
   "main": "index.js",
-  "dependencies": {},
   "devDependencies": {
-    "sass": "^1.43.4"
+    "sass": "^1.57.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
